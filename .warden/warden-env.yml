@@ -1,0 +1,56 @@
+services:
+  whoami:
+    hostname: "${WARDEN_ENV_NAME}-whoami"
+    image: "containous/whoami"
+  openswoole:
+    hostname: "${WARDEN_ENV_NAME}-openswoole"
+    build:
+      context: ./
+      dockerfile: ./.warden/Dockerfile-open-swoole
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-openswoole.tls=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-openswoole.rule=Host(`openswoole.${TRAEFIK_DOMAIN}`)
+      - traefik.http.services.${WARDEN_ENV_NAME}-openswoole.loadbalancer.server.port=9801
+      - traefik.docker.network=${WARDEN_ENV_NAME}_default
+#    ports:
+#      - "9801:9801"
+  swoole:
+    hostname: "${WARDEN_ENV_NAME}-swoole"
+    build:
+      context: ./
+      dockerfile: ./.warden/Dockerfile-swoole
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-swoole.tls=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-swoole.rule=Host(`swoole.${TRAEFIK_DOMAIN}`)
+      - traefik.http.services.${WARDEN_ENV_NAME}-swoole.loadbalancer.server.port=9802
+      - traefik.docker.network=${WARDEN_ENV_NAME}_default
+#    ports:
+#      - "9802:9802"
+  roadrunner:
+    hostname: "${WARDEN_ENV_NAME}-roadrunner"
+    build:
+      context: ./
+      dockerfile: ./.warden/Dockerfile-roadrunner
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-roadrunner.tls=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-roadrunner.rule=Host(`roadrunner.${TRAEFIK_DOMAIN}`)
+      - traefik.http.services.${WARDEN_ENV_NAME}-roadrunner.loadbalancer.server.port=9803
+      - traefik.docker.network=${WARDEN_ENV_NAME}_default
+#    ports:
+#      - "9803:9803"
+  frankenphp:
+    hostname: "${WARDEN_ENV_NAME}-frankenphp"
+    build:
+      context: ./
+      dockerfile: ./.warden/Dockerfile-frankenphp
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-frankenphp.tls=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-frankenphp.rule=Host(`frankenphp.${TRAEFIK_DOMAIN}`)
+      - traefik.http.services.${WARDEN_ENV_NAME}-frankenphp.loadbalancer.server.port=9804
+      - traefik.docker.network=${WARDEN_ENV_NAME}_default
+#    ports:
+#      - "9804:9804"
