@@ -18,8 +18,6 @@ Compare Laravel Octane Servers with Laravel served by nginx and php-fpm.
 - 32 GB RAM 3200 MHz
 - SSD NVME Kingston SNV2S500G
 
-## Installation
-
 ## How To Use
 
 Install Docker\
