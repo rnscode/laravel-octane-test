@@ -2,7 +2,7 @@
 
 Compare Laravel Octane Servers with Laravel served by nginx and php-fpm.
 
-## Used Tools
+## Tools
 
 - [Docker](https://www.docker.com/)
 - [Warden](https://warden.dev/)
@@ -10,6 +10,15 @@ Compare Laravel Octane Servers with Laravel served by nginx and php-fpm.
 - [Laravel Octane](https://github.com/laravel/octane)
 - [PHP](https://www.php.net/) 8.3
 - [Bombardier](https://github.com/codesenberg/bombardier)
+
+## Setup
+
+- Ubuntu 24.04
+- AMD Ryzen 4800H
+- 32 GB RAM 3200 MHz
+- SSD NVME Kingston SNV2S500G
+
+## Installation
 
 ## How To Use
 
