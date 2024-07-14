@@ -60,3 +60,10 @@ Run Bombardier to test endpoints `https://{app|swoole|openswoole|frankenphp|road
 - `/api/http-request`
 
 ## Results
+
+### Total Requests
+![image](https://github.com/user-attachments/assets/c5a5005e-117c-4985-843f-bf3bf4198cec)
+
+### Average Requests/Seconds
+![image](https://github.com/user-attachments/assets/e6f34381-da53-4fdb-9961-f49b1fb3529d)
+
